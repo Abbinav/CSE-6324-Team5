@@ -1,0 +1,34 @@
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: The first instance reverted
+-------------------------------------------------------
+Run time = 0.1946872000116855 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: The first instance reverted
+-------------------------------------------------------
+Run time = 0.4701007000403479 seconds
+###################################################
+###################################################
+###################################################

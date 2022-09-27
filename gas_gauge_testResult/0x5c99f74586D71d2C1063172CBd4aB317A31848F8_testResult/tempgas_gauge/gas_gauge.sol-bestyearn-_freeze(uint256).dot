@@ -1,0 +1,76 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: EXPRESSION 1
+
+EXPRESSION:
+require(bool)(balanceOf(msg.sender) >= _amount)
+
+IRs:
+TMP_86(uint256) = INTERNAL_CALL, bestyearn.balanceOf(address)(msg.sender)
+TMP_87(bool) = TMP_86 >= _amount
+TMP_88(None) = SOLIDITY_CALL require(bool)(TMP_87)"];
+1->2;
+2[label="Node Type: EXPRESSION 2
+
+EXPRESSION:
+require(bool)(frozenOf(msg.sender) + _amount >= MIN_FREEZE_AMOUNT)
+
+IRs:
+TMP_89(uint256) = INTERNAL_CALL, bestyearn.frozenOf(address)(msg.sender)
+TMP_90(uint256) = TMP_89 (c)+ _amount
+TMP_91(bool) = TMP_90 >= MIN_FREEZE_AMOUNT
+TMP_92(None) = SOLIDITY_CALL require(bool)(TMP_91)"];
+2->3;
+3[label="Node Type: EXPRESSION 3
+
+EXPRESSION:
+info.totalFrozen += _amount
+
+IRs:
+REF_79(uint256) -> info.totalFrozen
+REF_79(-> info) = REF_79 (c)+ _amount"];
+3->4;
+4[label="Node Type: EXPRESSION 4
+
+EXPRESSION:
+info.users[msg.sender].frozen += _amount
+
+IRs:
+REF_80(mapping(address => bestyearn.User)) -> info.users
+REF_81(bestyearn.User) -> REF_80[msg.sender]
+REF_82(uint256) -> REF_81.frozen
+REF_82(-> info) = REF_82 (c)+ _amount"];
+4->5;
+5[label="Node Type: EXPRESSION 5
+
+EXPRESSION:
+info.users[msg.sender].scaledPayout += int256(_amount * info.scaledPayoutPerToken)
+
+IRs:
+REF_83(mapping(address => bestyearn.User)) -> info.users
+REF_84(bestyearn.User) -> REF_83[msg.sender]
+REF_85(int256) -> REF_84.scaledPayout
+REF_86(uint256) -> info.scaledPayoutPerToken
+TMP_93(uint256) = _amount (c)* REF_86
+TMP_94 = CONVERT TMP_93 to int256
+REF_85(-> info) = REF_85 (c)+ TMP_94"];
+5->6;
+6[label="Node Type: EXPRESSION 6
+
+EXPRESSION:
+Transfer(msg.sender,address(this),_amount)
+
+IRs:
+TMP_95 = CONVERT this to address
+Emit Transfer(msg.sender.TMP_95._amount)"];
+6->7;
+7[label="Node Type: EXPRESSION 7
+
+EXPRESSION:
+Freeze(msg.sender,_amount)
+
+IRs:
+Emit Freeze(msg.sender._amount)"];
+}

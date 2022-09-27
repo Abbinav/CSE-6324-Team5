@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+solc_select/__init__.py
+solc_select/__main__.py
+solc_select/solc_select.py
+solc_select.egg-info/PKG-INFO
+solc_select.egg-info/SOURCES.txt
+solc_select.egg-info/dependency_links.txt
+solc_select.egg-info/entry_points.txt
+solc_select.egg-info/top_level.txt

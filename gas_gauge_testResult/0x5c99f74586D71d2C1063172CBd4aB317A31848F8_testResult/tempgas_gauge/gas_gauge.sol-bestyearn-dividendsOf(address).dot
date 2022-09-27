@@ -1,0 +1,24 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: RETURN 1
+
+EXPRESSION:
+uint256(int256(info.scaledPayoutPerToken * info.users[_user].frozen) - info.users[_user].scaledPayout) / FLOAT_SCALAR
+
+IRs:
+REF_55(uint256) -> info.scaledPayoutPerToken
+REF_56(mapping(address => bestyearn.User)) -> info.users
+REF_57(bestyearn.User) -> REF_56[_user]
+REF_58(uint256) -> REF_57.frozen
+TMP_53(uint256) = REF_55 (c)* REF_58
+TMP_54 = CONVERT TMP_53 to int256
+REF_59(mapping(address => bestyearn.User)) -> info.users
+REF_60(bestyearn.User) -> REF_59[_user]
+REF_61(int256) -> REF_60.scaledPayout
+TMP_55(int256) = TMP_54 (c)- REF_61
+TMP_56 = CONVERT TMP_55 to uint256
+TMP_57(uint256) = TMP_56 (c)/ FLOAT_SCALAR
+RETURN TMP_57"];
+}

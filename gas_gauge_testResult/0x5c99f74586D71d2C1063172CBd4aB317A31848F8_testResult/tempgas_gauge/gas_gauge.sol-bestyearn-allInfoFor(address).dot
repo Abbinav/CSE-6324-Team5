@@ -1,0 +1,17 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: RETURN 1
+
+EXPRESSION:
+(totalSupply(),totalFrozen(),balanceOf(_user),frozenOf(_user),dividendsOf(_user))
+
+IRs:
+TMP_58(uint256) = INTERNAL_CALL, bestyearn.totalSupply()()
+TMP_59(uint256) = INTERNAL_CALL, bestyearn.totalFrozen()()
+TMP_60(uint256) = INTERNAL_CALL, bestyearn.balanceOf(address)(_user)
+TMP_61(uint256) = INTERNAL_CALL, bestyearn.frozenOf(address)(_user)
+TMP_62(uint256) = INTERNAL_CALL, bestyearn.dividendsOf(address)(_user)
+RETURN TMP_58,TMP_59,TMP_60,TMP_61,TMP_62"];
+}

@@ -1,0 +1,102 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: EXPRESSION 1
+
+EXPRESSION:
+require(bool)(balanceOf(msg.sender) >= _tokens)
+
+IRs:
+TMP_13(uint256) = INTERNAL_CALL, bestyearn.balanceOf(address)(msg.sender)
+TMP_14(bool) = TMP_13 >= _tokens
+TMP_15(None) = SOLIDITY_CALL require(bool)(TMP_14)"];
+1->2;
+2[label="Node Type: EXPRESSION 2
+
+EXPRESSION:
+info.users[msg.sender].balance -= _tokens
+
+IRs:
+REF_11(mapping(address => bestyearn.User)) -> info.users
+REF_12(bestyearn.User) -> REF_11[msg.sender]
+REF_13(uint256) -> REF_12.balance
+REF_13(-> info) = REF_13 (c)- _tokens"];
+2->3;
+3[label="Node Type: NEW VARIABLE 3
+
+EXPRESSION:
+_burnedAmount = _tokens
+
+IRs:
+_burnedAmount(uint256) := _tokens(uint256)"];
+3->4;
+4[label="Node Type: IF 4
+
+EXPRESSION:
+info.totalFrozen > 0
+
+IRs:
+REF_14(uint256) -> info.totalFrozen
+TMP_16(bool) = REF_14 > 0
+CONDITION TMP_16"];
+4->5[label="True"];
+4->8[label="False"];
+5[label="Node Type: EXPRESSION 5
+
+EXPRESSION:
+_burnedAmount /= 2
+
+IRs:
+_burnedAmount(uint256) = _burnedAmount (c)/ 2"];
+5->6;
+6[label="Node Type: EXPRESSION 6
+
+EXPRESSION:
+info.scaledPayoutPerToken += _burnedAmount * FLOAT_SCALAR / info.totalFrozen
+
+IRs:
+REF_15(uint256) -> info.scaledPayoutPerToken
+TMP_17(uint256) = _burnedAmount (c)* FLOAT_SCALAR
+REF_16(uint256) -> info.totalFrozen
+TMP_18(uint256) = TMP_17 (c)/ REF_16
+REF_15(-> info) = REF_15 (c)+ TMP_18"];
+6->7;
+7[label="Node Type: EXPRESSION 7
+
+EXPRESSION:
+Transfer(msg.sender,address(this),_burnedAmount)
+
+IRs:
+TMP_19 = CONVERT this to address
+Emit Transfer(msg.sender.TMP_19._burnedAmount)"];
+7->8;
+8[label="Node Type: END_IF 8
+"];
+8->9;
+9[label="Node Type: EXPRESSION 9
+
+EXPRESSION:
+info.totalSupply -= _burnedAmount
+
+IRs:
+REF_17(uint256) -> info.totalSupply
+REF_17(-> info) = REF_17 (c)- _burnedAmount"];
+9->10;
+10[label="Node Type: EXPRESSION 10
+
+EXPRESSION:
+Transfer(msg.sender,address(0x0),_burnedAmount)
+
+IRs:
+TMP_21 = CONVERT 0 to address
+Emit Transfer(msg.sender.TMP_21._burnedAmount)"];
+10->11;
+11[label="Node Type: EXPRESSION 11
+
+EXPRESSION:
+Burn(_burnedAmount)
+
+IRs:
+Emit Burn(_burnedAmount)"];
+}
