@@ -1,0 +1,29 @@
+Message: STOP
+Last exception: STOP
+Last instruction at contract 4cf0d55aec952ed4ee4f320ab27ae35bf32be399 offset 38
+    4  function f(uint a) payable public{
+        5                              if (a == 65) {
+        6                                  revert();
+        7                              }
+        8                          }
+
+2 accounts.
+* user_account::
+Address: 0x8afe5e687df6165bd90dd3d51a4968f7284e6096 
+Balance: 9999942817 
+Storage: STORAGE_8afe5e687df6165bd90dd3d51a4968f7284e6096
+
+* contract_account::
+Address: 0x4cf0d55aec952ed4ee4f320ab27ae35bf32be399 
+Balance: 0 
+Storage: STORAGE_4cf0d55aec952ed4ee4f320ab27ae35bf32be399
+Code:
+	b'608060405260043610601c5760003560e01c8063b3de648b146021575b600080'
+	b'fd5b6037600480360381019060339190605c565b6039565b005b604181141560'
+	b'4657600080fd5b50565b600081359050605681608c565b92915050565b600060'
+	b'208284031215606d57600080fd5b60006079848285016049565b915050929150'
+	b'50565b6000819050919050565b6093816082565b8114609d57600080fd5b5056'
+	b'fea264697066735822122054b1dc8fc576513d519fa505c0a55068002c328cdb'
+	b'cd0272c17f238cba9866f164736f6c63430008010033'
+Coverage 77% (on this state)
+

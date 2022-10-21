@@ -86,7 +86,7 @@ EXPRESSION:
 Transfer(_from,_to,_transferred)
 
 IRs:
-Emit Transfer(_from._to._transferred)"];
+Emit Transfer(_from,_to,_transferred)"];
 9->10;
 10[label="Node Type: IF 10
 
@@ -136,7 +136,7 @@ Transfer(_from,address(this),_burnedAmount)
 
 IRs:
 TMP_81 = CONVERT this to address
-Emit Transfer(_from.TMP_81._burnedAmount)"];
+Emit Transfer(_from,TMP_81,_burnedAmount)"];
 14->15;
 15[label="Node Type: END_IF 15
 "];
@@ -157,7 +157,7 @@ Transfer(_from,address(0x0),_burnedAmount)
 
 IRs:
 TMP_83 = CONVERT 0 to address
-Emit Transfer(_from.TMP_83._burnedAmount)"];
+Emit Transfer(_from,TMP_83,_burnedAmount)"];
 17->18;
 18[label="Node Type: EXPRESSION 18
 

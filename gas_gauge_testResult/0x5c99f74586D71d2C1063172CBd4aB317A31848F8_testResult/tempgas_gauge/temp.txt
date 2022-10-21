@@ -1,0 +1,451 @@
+Compilation warnings/errors on gas_gauge.sol:
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> gas_gauge.sol
+
+Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+  --> gas_gauge.sol:52:2:
+   |
+52 | 	constructor() public {
+   | 	^ (Relevant source part starts here and spans across multiple lines).
+
+
+
+Contract Callable
++----------+--------------+
+| Variable | Dependencies |
++----------+--------------+
++----------+--------------+
+
+Function tokenCallback(address,uint256,bytes)
++----------+--------------+
+| Variable | Dependencies |
++----------+--------------+
+|  _from   |      []      |
+| _tokens  |      []      |
+|  _data   |      []      |
+|          |      []      |
++----------+--------------+
+
+Contract Callable
++----------+--------------+
+| Variable | Dependencies |
++----------+--------------+
++----------+--------------+
+
+Function tokenCallback(address,uint256,bytes)
++----------+--------------+
+| Variable | Dependencies |
++----------+--------------+
+|  _from   |      []      |
+| _tokens  |      []      |
+|  _data   |      []      |
+|          |      []      |
++----------+--------------+
+Contract bestyearn
++-------------------+--------------------------------------------------------------------------------------------------------------------------+
+|      Variable     |                                                       Dependencies                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------------------------+
+|    FLOAT_SCALAR   |                                                     ['FLOAT_SCALAR']                                                     |
+|   INITIAL_SUPPLY  |                                                    ['INITIAL_SUPPLY']                                                    |
+|     BURN_RATE     |                                                      ['BURN_RATE']                                                       |
+|    SUPPLY_FLOOR   |                                                     ['SUPPLY_FLOOR']                                                     |
+| MIN_FREEZE_AMOUNT |                                                  ['MIN_FREEZE_AMOUNT']                                                   |
+|        name       |                                                            []                                                            |
+|       symbol      |                                                            []                                                            |
+|      decimals     |                                                            []                                                            |
+|        info       | ['_burnedAmount', '_amount', 'INITIAL_SUPPLY', 'info', 'msg.sender', 'BURN_RATE', '_tokens', '_amounts', 'FLOAT_SCALAR'] |
++-------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+Function constructor()
++-----------------------------+------------------------------------------+
+|           Variable          |               Dependencies               |
++-----------------------------+------------------------------------------+
+|    bestyearn.FLOAT_SCALAR   |                    []                    |
+|   bestyearn.INITIAL_SUPPLY  |            ['INITIAL_SUPPLY']            |
+|     bestyearn.BURN_RATE     |                    []                    |
+|    bestyearn.SUPPLY_FLOOR   |                    []                    |
+| bestyearn.MIN_FREEZE_AMOUNT |                    []                    |
+|        bestyearn.name       |                    []                    |
+|       bestyearn.symbol      |                    []                    |
+|      bestyearn.decimals     |                    []                    |
+|        bestyearn.info       | ['INITIAL_SUPPLY', 'info', 'msg.sender'] |
++-----------------------------+------------------------------------------+
+Function freeze(uint256)
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|           _tokens           |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |      []      |
++-----------------------------+--------------+
+Function unfreeze(uint256)
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|           _tokens           |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |      []      |
++-----------------------------+--------------+
+Function collect()
++-----------------------------+------------------+
+|           Variable          |   Dependencies   |
++-----------------------------+------------------+
+|                             |        []        |
+|          _dividends         |        []        |
+|    bestyearn.FLOAT_SCALAR   | ['FLOAT_SCALAR'] |
+|   bestyearn.INITIAL_SUPPLY  |        []        |
+|     bestyearn.BURN_RATE     |        []        |
+|    bestyearn.SUPPLY_FLOOR   |        []        |
+| bestyearn.MIN_FREEZE_AMOUNT |        []        |
+|        bestyearn.name       |        []        |
+|       bestyearn.symbol      |        []        |
+|      bestyearn.decimals     |        []        |
+|        bestyearn.info       |     ['info']     |
++-----------------------------+------------------+
+Function burn(uint256)
++-----------------------------+------------------------------------------------------+
+|           Variable          |                     Dependencies                     |
++-----------------------------+------------------------------------------------------+
+|           _tokens           |                          []                          |
+|        _burnedAmount        |             ['_tokens', '_burnedAmount']             |
+|    bestyearn.FLOAT_SCALAR   |                   ['FLOAT_SCALAR']                   |
+|   bestyearn.INITIAL_SUPPLY  |                          []                          |
+|     bestyearn.BURN_RATE     |                          []                          |
+|    bestyearn.SUPPLY_FLOOR   |                          []                          |
+| bestyearn.MIN_FREEZE_AMOUNT |                          []                          |
+|        bestyearn.name       |                          []                          |
+|       bestyearn.symbol      |                          []                          |
+|      bestyearn.decimals     |                          []                          |
+|        bestyearn.info       | ['_tokens', '_burnedAmount', 'info', 'FLOAT_SCALAR'] |
++-----------------------------+------------------------------------------------------+
+Function distribute(uint256)
++-----------------------------+-------------------------------------+
+|           Variable          |             Dependencies            |
++-----------------------------+-------------------------------------+
+|           _tokens           |                  []                 |
+|    bestyearn.FLOAT_SCALAR   |           ['FLOAT_SCALAR']          |
+|   bestyearn.INITIAL_SUPPLY  |                  []                 |
+|     bestyearn.BURN_RATE     |                  []                 |
+|    bestyearn.SUPPLY_FLOOR   |                  []                 |
+| bestyearn.MIN_FREEZE_AMOUNT |                  []                 |
+|        bestyearn.name       |                  []                 |
+|       bestyearn.symbol      |                  []                 |
+|      bestyearn.decimals     |                  []                 |
+|        bestyearn.info       | ['_tokens', 'info', 'FLOAT_SCALAR'] |
++-----------------------------+-------------------------------------+
+Function transfer(address,uint256)
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|             _to             |      []      |
+|           _tokens           |      []      |
+|                             |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |      []      |
++-----------------------------+--------------+
+Function approve(address,uint256)
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|           _spender          |      []      |
+|           _tokens           |      []      |
+|                             |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |   ['info']   |
++-----------------------------+--------------+
+Function transferFrom(address,address,uint256)
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|            _from            |      []      |
+|             _to             |      []      |
+|           _tokens           |      []      |
+|                             |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |   ['info']   |
++-----------------------------+--------------+
+Function transferAndCall(address,uint256,bytes)
++-----------------------------+------------------+
+|           Variable          |   Dependencies   |
++-----------------------------+------------------+
+|             _to             |        []        |
+|           _tokens           |        []        |
+|            _data            |        []        |
+|                             |        []        |
+|         _transferred        | ['_transferred'] |
+|            _size            |     ['_to']      |
+|    bestyearn.FLOAT_SCALAR   |        []        |
+|   bestyearn.INITIAL_SUPPLY  |        []        |
+|     bestyearn.BURN_RATE     |        []        |
+|    bestyearn.SUPPLY_FLOOR   |        []        |
+| bestyearn.MIN_FREEZE_AMOUNT |        []        |
+|        bestyearn.name       |        []        |
+|       bestyearn.symbol      |        []        |
+|      bestyearn.decimals     |        []        |
+|        bestyearn.info       |        []        |
++-----------------------------+------------------+
+Function bulkTransfer(address[],uint256[])
++-----------------------------+----------------+
+|           Variable          |  Dependencies  |
++-----------------------------+----------------+
+|          _receivers         | ['_receivers'] |
+|           _amounts          |  ['_amounts']  |
+|              i              |     ['i']      |
+|    bestyearn.FLOAT_SCALAR   |       []       |
+|   bestyearn.INITIAL_SUPPLY  |       []       |
+|     bestyearn.BURN_RATE     |       []       |
+|    bestyearn.SUPPLY_FLOOR   |       []       |
+| bestyearn.MIN_FREEZE_AMOUNT |       []       |
+|        bestyearn.name       |       []       |
+|       bestyearn.symbol      |       []       |
+|      bestyearn.decimals     |       []       |
+|        bestyearn.info       |       []       |
++-----------------------------+----------------+
+Function whitelist(address,bool)
++-----------------------------+----------------+
+|           Variable          |  Dependencies  |
++-----------------------------+----------------+
+|            _user            | ['msg.sender'] |
+|           _status           |       []       |
+|    bestyearn.FLOAT_SCALAR   |       []       |
+|   bestyearn.INITIAL_SUPPLY  |       []       |
+|     bestyearn.BURN_RATE     |       []       |
+|    bestyearn.SUPPLY_FLOOR   |       []       |
+| bestyearn.MIN_FREEZE_AMOUNT |       []       |
+|        bestyearn.name       |       []       |
+|       bestyearn.symbol      |       []       |
+|      bestyearn.decimals     |       []       |
+|        bestyearn.info       |    ['info']    |
++-----------------------------+----------------+
+Function totalSupply()
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|                             |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |   ['info']   |
++-----------------------------+--------------+
+Function totalFrozen()
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|                             |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |   ['info']   |
++-----------------------------+--------------+
+Function balanceOf(address)
++-----------------------------+----------------------------------+
+|           Variable          |           Dependencies           |
++-----------------------------+----------------------------------+
+|            _user            | ['_from', 'msg.sender', '_user'] |
+|                             |                []                |
+|    bestyearn.FLOAT_SCALAR   |                []                |
+|   bestyearn.INITIAL_SUPPLY  |                []                |
+|     bestyearn.BURN_RATE     |                []                |
+|    bestyearn.SUPPLY_FLOOR   |                []                |
+| bestyearn.MIN_FREEZE_AMOUNT |                []                |
+|        bestyearn.name       |                []                |
+|       bestyearn.symbol      |                []                |
+|      bestyearn.decimals     |                []                |
+|        bestyearn.info       |             ['info']             |
++-----------------------------+----------------------------------+
+Function frozenOf(address)
++-----------------------------+-------------------------+
+|           Variable          |       Dependencies      |
++-----------------------------+-------------------------+
+|            _user            | ['msg.sender', '_user'] |
+|                             |            []           |
+|    bestyearn.FLOAT_SCALAR   |            []           |
+|   bestyearn.INITIAL_SUPPLY  |            []           |
+|     bestyearn.BURN_RATE     |            []           |
+|    bestyearn.SUPPLY_FLOOR   |            []           |
+| bestyearn.MIN_FREEZE_AMOUNT |            []           |
+|        bestyearn.name       |            []           |
+|       bestyearn.symbol      |            []           |
+|      bestyearn.decimals     |            []           |
+|        bestyearn.info       |         ['info']        |
++-----------------------------+-------------------------+
+Function dividendsOf(address)
++-----------------------------+-------------------------+
+|           Variable          |       Dependencies      |
++-----------------------------+-------------------------+
+|            _user            | ['msg.sender', '_user'] |
+|                             |            []           |
+|    bestyearn.FLOAT_SCALAR   |     ['FLOAT_SCALAR']    |
+|   bestyearn.INITIAL_SUPPLY  |            []           |
+|     bestyearn.BURN_RATE     |            []           |
+|    bestyearn.SUPPLY_FLOOR   |            []           |
+| bestyearn.MIN_FREEZE_AMOUNT |            []           |
+|        bestyearn.name       |            []           |
+|       bestyearn.symbol      |            []           |
+|      bestyearn.decimals     |            []           |
+|        bestyearn.info       |         ['info']        |
++-----------------------------+-------------------------+
+Function allowance(address,address)
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|            _user            |      []      |
+|           _spender          |      []      |
+|                             |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |   ['info']   |
++-----------------------------+--------------+
+Function isWhitelisted(address)
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|            _user            |  ['_from']   |
+|                             |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |   ['info']   |
++-----------------------------+--------------+
+Function allInfoFor(address)
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|            _user            |      []      |
+|       totalTokenSupply      |      []      |
+|      totalTokensFrozen      |      []      |
+|         userBalance         |      []      |
+|          userFrozen         |      []      |
+|        userDividends        |      []      |
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |      []      |
++-----------------------------+--------------+
+Function _transfer(address,address,uint256)
++-----------------------------+-------------------------------------------------------------------+
+|           Variable          |                            Dependencies                           |
++-----------------------------+-------------------------------------------------------------------+
+|            _from            |                      ['_from', 'msg.sender']                      |
+|             _to             |                              ['_to']                              |
+|           _tokens           |                            ['_tokens']                            |
+|                             |                                 []                                |
+|        _burnedAmount        |             ['BURN_RATE', '_tokens', '_burnedAmount']             |
+|         _transferred        |             ['BURN_RATE', '_tokens', '_burnedAmount']             |
+|    bestyearn.FLOAT_SCALAR   |                          ['FLOAT_SCALAR']                         |
+|   bestyearn.INITIAL_SUPPLY  |                         ['INITIAL_SUPPLY']                        |
+|     bestyearn.BURN_RATE     |                           ['BURN_RATE']                           |
+|    bestyearn.SUPPLY_FLOOR   |                          ['SUPPLY_FLOOR']                         |
+| bestyearn.MIN_FREEZE_AMOUNT |                                 []                                |
+|        bestyearn.name       |                                 []                                |
+|       bestyearn.symbol      |                                 []                                |
+|      bestyearn.decimals     |                                 []                                |
+|        bestyearn.info       | ['_burnedAmount', 'info', 'BURN_RATE', '_tokens', 'FLOAT_SCALAR'] |
++-----------------------------+-------------------------------------------------------------------+
+Function _freeze(uint256)
++-----------------------------+--------------------------------+
+|           Variable          |          Dependencies          |
++-----------------------------+--------------------------------+
+|           _amount           |          ['_tokens']           |
+|    bestyearn.FLOAT_SCALAR   |               []               |
+|   bestyearn.INITIAL_SUPPLY  |               []               |
+|     bestyearn.BURN_RATE     |               []               |
+|    bestyearn.SUPPLY_FLOOR   |               []               |
+| bestyearn.MIN_FREEZE_AMOUNT |     ['MIN_FREEZE_AMOUNT']      |
+|        bestyearn.name       |               []               |
+|       bestyearn.symbol      |               []               |
+|      bestyearn.decimals     |               []               |
+|        bestyearn.info       | ['_amount', '_tokens', 'info'] |
++-----------------------------+--------------------------------+
+Function _unfreeze(uint256)
++-----------------------------+------------------------------------------------------------------------------+
+|           Variable          |                                 Dependencies                                 |
++-----------------------------+------------------------------------------------------------------------------+
+|           _amount           |                                 ['_tokens']                                  |
+|        _burnedAmount        |                     ['BURN_RATE', '_amount', '_tokens']                      |
+|    bestyearn.FLOAT_SCALAR   |                               ['FLOAT_SCALAR']                               |
+|   bestyearn.INITIAL_SUPPLY  |                                      []                                      |
+|     bestyearn.BURN_RATE     |                                ['BURN_RATE']                                 |
+|    bestyearn.SUPPLY_FLOOR   |                                      []                                      |
+| bestyearn.MIN_FREEZE_AMOUNT |                                      []                                      |
+|        bestyearn.name       |                                      []                                      |
+|       bestyearn.symbol      |                                      []                                      |
+|      bestyearn.decimals     |                                      []                                      |
+|        bestyearn.info       | ['_burnedAmount', '_amount', 'info', 'BURN_RATE', '_tokens', 'FLOAT_SCALAR'] |
++-----------------------------+------------------------------------------------------------------------------+
+Function slitherConstructorConstantVariables()
++-----------------------------+--------------+
+|           Variable          | Dependencies |
++-----------------------------+--------------+
+|    bestyearn.FLOAT_SCALAR   |      []      |
+|   bestyearn.INITIAL_SUPPLY  |      []      |
+|     bestyearn.BURN_RATE     |      []      |
+|    bestyearn.SUPPLY_FLOOR   |      []      |
+| bestyearn.MIN_FREEZE_AMOUNT |      []      |
+|        bestyearn.name       |      []      |
+|       bestyearn.symbol      |      []      |
+|      bestyearn.decimals     |      []      |
+|        bestyearn.info       |      []      |
++-----------------------------+--------------+
+gas_gauge.sol analyzed (2 contracts)

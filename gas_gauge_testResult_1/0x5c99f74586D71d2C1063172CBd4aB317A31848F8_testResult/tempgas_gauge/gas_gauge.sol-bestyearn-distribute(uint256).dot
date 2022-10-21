@@ -1,0 +1,56 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: EXPRESSION 1
+
+EXPRESSION:
+require(bool)(info.totalFrozen > 0)
+
+IRs:
+REF_18(uint256) -> info.totalFrozen
+TMP_24(bool) = REF_18 > 0
+TMP_25(None) = SOLIDITY_CALL require(bool)(TMP_24)"];
+1->2;
+2[label="Node Type: EXPRESSION 2
+
+EXPRESSION:
+require(bool)(balanceOf(msg.sender) >= _tokens)
+
+IRs:
+TMP_26(uint256) = INTERNAL_CALL, bestyearn.balanceOf(address)(msg.sender)
+TMP_27(bool) = TMP_26 >= _tokens
+TMP_28(None) = SOLIDITY_CALL require(bool)(TMP_27)"];
+2->3;
+3[label="Node Type: EXPRESSION 3
+
+EXPRESSION:
+info.users[msg.sender].balance -= _tokens
+
+IRs:
+REF_19(mapping(address => bestyearn.User)) -> info.users
+REF_20(bestyearn.User) -> REF_19[msg.sender]
+REF_21(uint256) -> REF_20.balance
+REF_21(-> info) = REF_21 (c)- _tokens"];
+3->4;
+4[label="Node Type: EXPRESSION 4
+
+EXPRESSION:
+info.scaledPayoutPerToken += _tokens * FLOAT_SCALAR / info.totalFrozen
+
+IRs:
+REF_22(uint256) -> info.scaledPayoutPerToken
+TMP_29(uint256) = _tokens (c)* FLOAT_SCALAR
+REF_23(uint256) -> info.totalFrozen
+TMP_30(uint256) = TMP_29 (c)/ REF_23
+REF_22(-> info) = REF_22 (c)+ TMP_30"];
+4->5;
+5[label="Node Type: EXPRESSION 5
+
+EXPRESSION:
+Transfer(msg.sender,address(this),_tokens)
+
+IRs:
+TMP_31 = CONVERT this to address
+Emit Transfer(msg.sender.TMP_31._tokens)"];
+}

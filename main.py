@@ -1,8 +1,9 @@
+from numpy import source
 from findloops import FindLoops
 from setup import SetUp
 from agent import Agent
 from fuzzer import Fuzzer
-
+from manticore.ethereum import ManticoreEVM, ABI, verifier
 from multiprocessing.pool import ThreadPool
 import timeit
 import shutil
@@ -30,8 +31,8 @@ def copydir(src, dest, ignore=None):
                 copydir(os.path.join(src, f),
                         os.path.join(dest, f),
                         ignore)
-    else:
-        shutil.copyfile(src, dest)
+    # else:
+    #     shutil.copy(src, dest)
 
 
 class Main():
@@ -908,6 +909,35 @@ class Main():
 
                     text = '-------------------------------------------------------'
                     report.append(text)
+                
+                source_code = """
+                    pragma solidity >=0.4.24 <0.9.0;
+                    contract Simple {
+                        function f(uint a) payable public{
+                            if (a == 65) {
+                                revert();
+                            }
+                        }
+                    }
+                    """
+                m = ManticoreEVM()
+                user_account = m.create_account(balance=10**10, name="user_account")
+                contract_account = m.solidity_create_contract(
+                    source_code, owner=user_account, name="contract_account", gas=36225
+                )
+                print("Inside source code",source_code)
+                print("User Account", user_account)
+                # contract_account = m.solidity_create_contract(source_code, owner=user_account, name="contract")
+                # contract_account = m.solidity_create_contract(source_code,owner=user_account)
+                print("Manticore contract", contract_account)
+                symbolic_var = m.make_symbolic_value()
+                contract_account.f(symbolic_var)
+
+                            
+                print("Results are in {}".format(m.workspace))
+                m.finalize()
+                text = verifier.manticore_verifier("0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol", "bestyearn")
+                print("Verifer result", text)
 
         stop1 = timeit.default_timer()
         text = 'Run time = ' + str(stop1 - start) + ' seconds'
@@ -959,7 +989,9 @@ class Main():
             self.run(self.contract_file, fuzzer_flag, threshold_flag, output_file, ganache_flag)
         else:
             for file in glob.glob(os.path.join(self.contract_path, '*.sol')):
-                # print(self.contract_path)
+                print("Print here",self.contract_path)
+                
                 file_name = file[file.index(self.contract_path) + len(self.contract_path):]
+                print("Print here 2",file_name)
                 ganache_flag = self.run(file_name, fuzzer_flag, threshold_flag, output_file, ganache_flag)
 

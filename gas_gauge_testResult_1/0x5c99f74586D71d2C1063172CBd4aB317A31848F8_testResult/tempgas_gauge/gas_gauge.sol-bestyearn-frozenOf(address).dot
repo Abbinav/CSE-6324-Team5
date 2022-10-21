@@ -1,0 +1,15 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: RETURN 1
+
+EXPRESSION:
+info.users[_user].frozen
+
+IRs:
+REF_52(mapping(address => bestyearn.User)) -> info.users
+REF_53(bestyearn.User) -> REF_52[_user]
+REF_54(uint256) -> REF_53.frozen
+RETURN REF_54"];
+}

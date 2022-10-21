@@ -1,0 +1,12 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: EXPRESSION 1
+
+EXPRESSION:
+_unfreeze(_tokens)
+
+IRs:
+INTERNAL_CALL, bestyearn._unfreeze(uint256)(_tokens)"];
+}

@@ -1,0 +1,32 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: EXPRESSION 1
+
+EXPRESSION:
+info.users[msg.sender].allowance[_spender] = _tokens
+
+IRs:
+REF_24(mapping(address => bestyearn.User)) -> info.users
+REF_25(bestyearn.User) -> REF_24[msg.sender]
+REF_26(mapping(address => uint256)) -> REF_25.allowance
+REF_27(uint256) -> REF_26[_spender]
+REF_27 (->info) := _tokens(uint256)"];
+1->2;
+2[label="Node Type: EXPRESSION 2
+
+EXPRESSION:
+Approval(msg.sender,_spender,_tokens)
+
+IRs:
+Emit Approval(msg.sender._spender._tokens)"];
+2->3;
+3[label="Node Type: RETURN 3
+
+EXPRESSION:
+true
+
+IRs:
+RETURN True"];
+}

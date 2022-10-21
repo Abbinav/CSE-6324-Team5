@@ -1,0 +1,66 @@
+digraph{
+0[label="Node Type: OTHER_ENTRYPOINT 0
+
+EXPRESSION:
+FLOAT_SCALAR = 2 ** 64
+
+IRs:
+TMP_111(uint256) = 2 (c)** 64
+FLOAT_SCALAR(uint256) := TMP_111(uint256)"];
+0->1;
+1[label="Node Type: OTHER_ENTRYPOINT 1
+
+EXPRESSION:
+INITIAL_SUPPLY = 1e24
+
+IRs:
+INITIAL_SUPPLY(uint256) := 1000000000000000000000000(uint256)"];
+1->2;
+2[label="Node Type: OTHER_ENTRYPOINT 2
+
+EXPRESSION:
+BURN_RATE = 10
+
+IRs:
+BURN_RATE(uint256) := 10(uint256)"];
+2->3;
+3[label="Node Type: OTHER_ENTRYPOINT 3
+
+EXPRESSION:
+SUPPLY_FLOOR = 1
+
+IRs:
+SUPPLY_FLOOR(uint256) := 1(uint256)"];
+3->4;
+4[label="Node Type: OTHER_ENTRYPOINT 4
+
+EXPRESSION:
+MIN_FREEZE_AMOUNT = 1e20
+
+IRs:
+MIN_FREEZE_AMOUNT(uint256) := 100000000000000000000(uint256)"];
+4->5;
+5[label="Node Type: OTHER_ENTRYPOINT 5
+
+EXPRESSION:
+name = best yearn world
+
+IRs:
+name(string) := best yearn world(string)"];
+5->6;
+6[label="Node Type: OTHER_ENTRYPOINT 6
+
+EXPRESSION:
+symbol = byw
+
+IRs:
+symbol(string) := byw(string)"];
+6->7;
+7[label="Node Type: OTHER_ENTRYPOINT 7
+
+EXPRESSION:
+decimals = 18
+
+IRs:
+decimals(uint8) := 18(uint256)"];
+}

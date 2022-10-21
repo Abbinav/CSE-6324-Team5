@@ -1,0 +1,180 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: EXPRESSION 1
+
+EXPRESSION:
+require(bool)(balanceOf(_from) >= _tokens)
+
+IRs:
+TMP_63(uint256) = INTERNAL_CALL, bestyearn.balanceOf(address)(_from)
+TMP_64(bool) = TMP_63 >= _tokens
+TMP_65(None) = SOLIDITY_CALL require(bool)(TMP_64)"];
+1->2;
+2[label="Node Type: EXPRESSION 2
+
+EXPRESSION:
+info.users[_from].balance -= _tokens
+
+IRs:
+REF_69(mapping(address => bestyearn.User)) -> info.users
+REF_70(bestyearn.User) -> REF_69[_from]
+REF_71(uint256) -> REF_70.balance
+REF_71(-> info) = REF_71 (c)- _tokens"];
+2->3;
+3[label="Node Type: NEW VARIABLE 3
+
+EXPRESSION:
+_burnedAmount = _tokens * BURN_RATE / 100
+
+IRs:
+TMP_66(uint256) = _tokens (c)* BURN_RATE
+TMP_67(uint256) = TMP_66 (c)/ 100
+_burnedAmount(uint256) := TMP_67(uint256)"];
+3->4;
+4[label="Node Type: IF 4
+
+EXPRESSION:
+totalSupply() - _burnedAmount < INITIAL_SUPPLY * SUPPLY_FLOOR / 100 || isWhitelisted(_from)
+
+IRs:
+TMP_68(uint256) = INTERNAL_CALL, bestyearn.totalSupply()()
+TMP_69(uint256) = TMP_68 (c)- _burnedAmount
+TMP_70(uint256) = INITIAL_SUPPLY (c)* SUPPLY_FLOOR
+TMP_71(uint256) = TMP_70 (c)/ 100
+TMP_72(bool) = TMP_69 < TMP_71
+TMP_73(bool) = INTERNAL_CALL, bestyearn.isWhitelisted(address)(_from)
+TMP_74(bool) = TMP_72 || TMP_73
+CONDITION TMP_74"];
+4->5[label="True"];
+4->6[label="False"];
+5[label="Node Type: EXPRESSION 5
+
+EXPRESSION:
+_burnedAmount = 0
+
+IRs:
+_burnedAmount(uint256) := 0(uint256)"];
+5->6;
+6[label="Node Type: END_IF 6
+"];
+6->7;
+7[label="Node Type: NEW VARIABLE 7
+
+EXPRESSION:
+_transferred = _tokens - _burnedAmount
+
+IRs:
+TMP_75(uint256) = _tokens (c)- _burnedAmount
+_transferred(uint256) := TMP_75(uint256)"];
+7->8;
+8[label="Node Type: EXPRESSION 8
+
+EXPRESSION:
+info.users[_to].balance += _transferred
+
+IRs:
+REF_72(mapping(address => bestyearn.User)) -> info.users
+REF_73(bestyearn.User) -> REF_72[_to]
+REF_74(uint256) -> REF_73.balance
+REF_74(-> info) = REF_74 (c)+ _transferred"];
+8->9;
+9[label="Node Type: EXPRESSION 9
+
+EXPRESSION:
+Transfer(_from,_to,_transferred)
+
+IRs:
+Emit Transfer(_from._to._transferred)"];
+9->10;
+10[label="Node Type: IF 10
+
+EXPRESSION:
+_burnedAmount > 0
+
+IRs:
+TMP_77(bool) = _burnedAmount > 0
+CONDITION TMP_77"];
+10->11[label="True"];
+10->19[label="False"];
+11[label="Node Type: IF 11
+
+EXPRESSION:
+info.totalFrozen > 0
+
+IRs:
+REF_75(uint256) -> info.totalFrozen
+TMP_78(bool) = REF_75 > 0
+CONDITION TMP_78"];
+11->12[label="True"];
+11->15[label="False"];
+12[label="Node Type: EXPRESSION 12
+
+EXPRESSION:
+_burnedAmount /= 2
+
+IRs:
+_burnedAmount(uint256) = _burnedAmount (c)/ 2"];
+12->13;
+13[label="Node Type: EXPRESSION 13
+
+EXPRESSION:
+info.scaledPayoutPerToken += _burnedAmount * FLOAT_SCALAR / info.totalFrozen
+
+IRs:
+REF_76(uint256) -> info.scaledPayoutPerToken
+TMP_79(uint256) = _burnedAmount (c)* FLOAT_SCALAR
+REF_77(uint256) -> info.totalFrozen
+TMP_80(uint256) = TMP_79 (c)/ REF_77
+REF_76(-> info) = REF_76 (c)+ TMP_80"];
+13->14;
+14[label="Node Type: EXPRESSION 14
+
+EXPRESSION:
+Transfer(_from,address(this),_burnedAmount)
+
+IRs:
+TMP_81 = CONVERT this to address
+Emit Transfer(_from.TMP_81._burnedAmount)"];
+14->15;
+15[label="Node Type: END_IF 15
+"];
+15->16;
+16[label="Node Type: EXPRESSION 16
+
+EXPRESSION:
+info.totalSupply -= _burnedAmount
+
+IRs:
+REF_78(uint256) -> info.totalSupply
+REF_78(-> info) = REF_78 (c)- _burnedAmount"];
+16->17;
+17[label="Node Type: EXPRESSION 17
+
+EXPRESSION:
+Transfer(_from,address(0x0),_burnedAmount)
+
+IRs:
+TMP_83 = CONVERT 0 to address
+Emit Transfer(_from.TMP_83._burnedAmount)"];
+17->18;
+18[label="Node Type: EXPRESSION 18
+
+EXPRESSION:
+Burn(_burnedAmount)
+
+IRs:
+Emit Burn(_burnedAmount)"];
+18->19;
+19[label="Node Type: END_IF 19
+"];
+19->20;
+20[label="Node Type: RETURN 20
+
+EXPRESSION:
+_transferred
+
+IRs:
+RETURN _transferred"];
+}

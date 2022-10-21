@@ -11,24 +11,16 @@ Does not satisfy the conditions of the fuzzer
 Results of the Threshold Finder:
 Error: The first instance reverted
 -------------------------------------------------------
-Run time = 0.1946872000116855 seconds
+Run time = 31.632046814003843 seconds
 ###################################################
 ###################################################
 ###################################################
-Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
-Found 1 loop in 1 function with the following information:
-Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
--------------------------------------------------------
-Results for bestyearn.bulkTransfer(address[],uint256[]): 
-inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
 
-Results of the fuzzer:
-Does not satisfy the conditions of the fuzzer
--------------------------------------------------------
-Results of the Threshold Finder:
-Error: The first instance reverted
--------------------------------------------------------
-Run time = 0.4701007000403479 seconds
-###################################################
-###################################################
-###################################################
+# Welcome to manticore-verifier
+# Owner account: 0x66845f4e840d5c708883f0b36b2001935d7779de
+# Contract account: 0x89dd732a58a64a414e777db95b840c340ee15562
+# Sender_0 account: 0xab1345d2bff2d9dd2a3f99c704ebb44c7fee8ff3
+# PSender account: 0x36e4ee0e0c8bb5a86088d513d1ea4f66f884f37c
+# Found 0 properties:
+I am sorry I had to run the init bytecode for this.
+Good Bye.

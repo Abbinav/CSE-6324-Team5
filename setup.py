@@ -244,7 +244,7 @@ class SetUp:
             output_file.write("\n")
         output_file.close()
 
-        shutil.copy(contract_file, contract_folder + '/' + self.file_name, follow_symlinks=True)
+        # shutil.copy(contract_file, contract_folder + '/' + self.file_name, follow_symlinks=True)
         return contract_folder + '/' + self.file_name
 
     def modify_loop(self, contract, c_info, f_info, l_info, state_vars, it_counter=2):
@@ -1075,7 +1075,7 @@ class SetUp:
         return self.get_gas_results(self.env_contract_folder, self.env_output)
 
     def get_gas_results(self, contract_folder, output_file_path):
-        command = "cd " + contract_folder + " ;truffle" + " test 2>&1 > " + output_file_path
+        command = "cd " + contract_folder + " ;truffle" + " test 2>&1 | tee " + output_file_path
         os.system(command)
         output = -3
         f = open(contract_folder + '/' + output_file_path, "r")
@@ -1105,7 +1105,7 @@ class SetUp:
         return output
 
     def get_results(self, contract_folder, output_file_path):
-        command = "cd " + contract_folder + " ;truffle" + " test 2>&1 > " + output_file_path
+        command = "cd " + contract_folder + " ;truffle" + " test 2>&1 | tee " + output_file_path
         os.system(command)
         original_gas = 3
         first_iteration_gas = -3

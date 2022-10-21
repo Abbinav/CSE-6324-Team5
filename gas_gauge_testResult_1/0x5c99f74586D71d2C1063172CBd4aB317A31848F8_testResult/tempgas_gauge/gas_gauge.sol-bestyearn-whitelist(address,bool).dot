@@ -1,0 +1,33 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: EXPRESSION 1
+
+EXPRESSION:
+require(bool)(msg.sender == info.admin)
+
+IRs:
+REF_43(address) -> info.admin
+TMP_48(bool) = msg.sender == REF_43
+TMP_49(None) = SOLIDITY_CALL require(bool)(TMP_48)"];
+1->2;
+2[label="Node Type: EXPRESSION 2
+
+EXPRESSION:
+info.users[_user].whitelisted = _status
+
+IRs:
+REF_44(mapping(address => bestyearn.User)) -> info.users
+REF_45(bestyearn.User) -> REF_44[_user]
+REF_46(bool) -> REF_45.whitelisted
+REF_46 (->info) := _status(bool)"];
+2->3;
+3[label="Node Type: EXPRESSION 3
+
+EXPRESSION:
+Whitelist(_user,_status)
+
+IRs:
+Emit Whitelist(_user._status)"];
+}

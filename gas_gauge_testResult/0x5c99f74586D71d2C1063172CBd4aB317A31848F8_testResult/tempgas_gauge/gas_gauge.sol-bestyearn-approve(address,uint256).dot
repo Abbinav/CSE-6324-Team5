@@ -20,7 +20,7 @@ EXPRESSION:
 Approval(msg.sender,_spender,_tokens)
 
 IRs:
-Emit Approval(msg.sender._spender._tokens)"];
+Emit Approval(msg.sender,_spender,_tokens)"];
 2->3;
 3[label="Node Type: RETURN 3
 

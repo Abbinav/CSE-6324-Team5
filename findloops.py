@@ -36,9 +36,8 @@ class FindLoops:
         f = open(path + '/' + output_file, "r")
         return f.readlines()
 
-    def make_local_variables(self):
-        print("inside 2")
-        command = "cd " + self.temp_output_path + "; slither " + self.file_name 
+    def make_local_variables(self):        
+        command = "cd " + self.temp_output_path + "; slither " + self.file_name + " --print cfg"
         print(command)
         cmd = self.solc_use + " " + command
         print(cmd)
@@ -132,7 +131,7 @@ class FindLoops:
 
     def make_function_summary(self):
         print("inside 3")
-        command = "cd " + self.temp_output_path + "; slither " + self.file_name + " --print function-summary 2>&1 > " + self.output_file + " | type " + self.output_file
+        command = "cd " + self.temp_output_path + "; slither " + self.file_name + " --print function-summary 2>&1 | tee " + self.output_file
         lines = self.run_command_with_output(command, self.temp_output_path, self.output_file)
         print(lines)        
 
@@ -362,7 +361,7 @@ class FindLoops:
         return function_inputs
 
     def make_variable_dependency(self):
-        command = "cd " + self.temp_output_path + "; slither " + self.file_name + " --print data-dependency 2>&1 > " + self.output_file  + " | type " + self.output_file
+        command = "cd " + self.temp_output_path + "; slither " + self.file_name + " --print data-dependency 2>&1 | tee " + self.output_file
         lines = self.run_command_with_output(command, self.temp_output_path, self.output_file)
         print( lines)
         cont_name = ""
@@ -412,7 +411,7 @@ class FindLoops:
         return input_var, variable_dependency
 
     def make_state_variable_list(self):
-        command = "cd " + self.temp_output_path + "; slither " + self.file_name + " --print variable-order 2>&1 > " + self.output_file  + " | type " + self.output_file
+        command = "cd " + self.temp_output_path + "; slither " + self.file_name + " --print variable-order 2>&1 | tee " + self.output_file
         lines = self.run_command_with_output(command, self.temp_output_path, self.output_file)
         print("inside 7" )
         print(lines)
@@ -537,8 +536,8 @@ class FindLoops:
             print("Creation of the directory %s failed" % self.temp_output_path)
         else:
             print("Successfully created the directory %s " % self.temp_output_path)
-        shutil.copy(self.contract_path + self.original_name, self.temp_output_path + '/' + self.file_name,
-                    follow_symlinks=True)
+        # shutil.copy(self.contract_path + self.original_name, self.temp_output_path + '/' + self.file_name,
+        #             follow_symlinks=True)
         self.state_variables = self.make_state_variable_list()
         self.func_sum = self.make_function_summary()
 

@@ -38,7 +38,7 @@ Transfer(address(0x0),msg.sender,INITIAL_SUPPLY)
 
 IRs:
 TMP_0 = CONVERT 0 to address
-Emit Transfer(TMP_0.msg.sender.INITIAL_SUPPLY)"];
+Emit Transfer(TMP_0,msg.sender,INITIAL_SUPPLY)"];
 4->5;
 5[label="Node Type: EXPRESSION 5
 

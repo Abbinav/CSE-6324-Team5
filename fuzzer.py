@@ -99,7 +99,7 @@ class Fuzzer():
             counter += self.observation_size[i]
 
         self.modifyTest(new_inputs)
-        command = "cd " + self.contract_folder + " ;truffle" + " test 2>&1 > " + self.output_file_path
+        command = "cd " + self.contract_folder + " ;truffle" + " test 2>&1 | tee " + self.output_file_path
         os.system(command)
         gas_left = self.getOutput()
         reward = self.getReward(gas_left)
