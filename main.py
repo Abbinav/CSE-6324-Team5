@@ -31,8 +31,8 @@ def copydir(src, dest, ignore=None):
                 copydir(os.path.join(src, f),
                         os.path.join(dest, f),
                         ignore)
-    # else:
-    #     shutil.copy(src, dest)
+    else:
+        shutil.copy(src, dest)
 
 
 class Main():
@@ -671,7 +671,7 @@ class Main():
                             "observation": ""
 
                         }
-                        text = 'Error: Cannot run functions with struct or multi-dimensional array inputs'
+                        text = 'Error: Cannot run funfctions with struct or multi-dimensional array inputs'
                         report.append(text)
                         continue
                     if '].length' in ' '.join([str(elem) for elem in loop[3]]):
@@ -910,6 +910,7 @@ class Main():
                     text = '-------------------------------------------------------'
                     report.append(text)
                 
+                m = ManticoreEVM()
                 source_code = """
                     pragma solidity >=0.4.24 <0.9.0;
                     contract Simple {
@@ -920,24 +921,77 @@ class Main():
                         }
                     }
                     """
-                m = ManticoreEVM()
+                print("Before Manticore")
                 user_account = m.create_account(balance=10**10, name="user_account")
                 contract_account = m.solidity_create_contract(
                     source_code, owner=user_account, name="contract_account", gas=36225
                 )
-                print("Inside source code",source_code)
-                print("User Account", user_account)
-                # contract_account = m.solidity_create_contract(source_code, owner=user_account, name="contract")
-                # contract_account = m.solidity_create_contract(source_code,owner=user_account)
-                print("Manticore contract", contract_account)
+               
                 symbolic_var = m.make_symbolic_value()
                 contract_account.f(symbolic_var)
 
                             
                 print("Results are in {}".format(m.workspace))
                 m.finalize()
-                text = verifier.manticore_verifier("0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol", "bestyearn")
-                print("Verifer result", text)
+                verifier.manticore_verifier("0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol", "bestyearn", "None", "3")
+                
+            m = ManticoreEVM()
+
+            # open(self.self.contract_path + "/simple_int_overflow.sol")
+            with open(self.contract_path + "simple_int_overflow.sol" ) as f:
+                source_code_1 = f.read()
+
+            user_account_1 = m.create_account(balance=self.gas_limit)
+            contract_account_1 = m.solidity_create_contract(source_code_1,
+                                                        owner=user_account_1, gas=36225)
+            # m.generate_testcase(state=0)
+            # m.get_account(user_account_1)
+
+            print("Results are in {}".format(m.workspace))
+            m.finalize()
+
+            m = ManticoreEVM() # initiate the blockchain
+            with open('unprotected.sol') as f:
+                source_code = f.read()
+
+            # Generate the accounts. Creator has 10 ethers; attacker 0
+            creator_account = m.create_account(balance=10*10**18)
+            attacker_account = m.create_account(balance=10*10**18)
+            contract_account = m.solidity_create_contract(source_code, owner=creator_account)
+
+
+            # Deposit 1 ether, from the creator
+            contract_account.deposit(caller=creator_account, value=10**18)
+
+            # Two raw transactions from the attacker
+            symbolic_data = m.make_symbolic_buffer(320)
+            m.transaction(caller=attacker_account,
+                        address=contract_account,
+                        data=symbolic_data,
+                        value=0)
+
+            symbolic_data = m.make_symbolic_buffer(320)
+            m.transaction(caller=attacker_account,
+                        address=contract_account,
+                        data=symbolic_data,
+                        value=0)
+
+
+            for state in m.running_states:
+                # Check if the attacker can ends with some ether
+
+                balance = state.platform.get_balance(attacker_account.address)
+                state.constrain(balance > 10 * 10 ** 18)
+
+                if state.is_feasible():
+                    print("Attacker can steal the ether! see {}".format(m.workspace))
+                    m.generate_testcase(state, 'WalletHack')
+                    print(f'Bug found, results are in {m.workspace}')
+
+            
+
+
+
 
         stop1 = timeit.default_timer()
         text = 'Run time = ' + str(stop1 - start) + ' seconds'

@@ -24,3 +24,311 @@ Run time = 31.632046814003843 seconds
 # Found 0 properties:
 I am sorry I had to run the init bytecode for this.
 Good Bye.
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: The first instance reverted
+-------------------------------------------------------
+Run time = 66.87903489199999 seconds
+###################################################
+###################################################
+###################################################
+Report for simple_int_overflow.sol:
+Slither was not able to scan the contract! File not supported
+-------------------------------------------------------
+Run time = 1.9280454760000794 seconds
+###################################################
+###################################################
+###################################################
+Report for simple_int_overflow.sol:
+Slither was not able to scan the contract! File not supported
+-------------------------------------------------------
+Run time = 2.430517671999951 seconds
+###################################################
+###################################################
+###################################################
+Report for simple_int_overflow.sol:
+Slither was not able to scan the contract! File not supported
+-------------------------------------------------------
+Run time = 2.2200331759995606 seconds
+###################################################
+###################################################
+###################################################
+Report for simple_int_overflow.sol:
+Found 0 loop
+-------------------------------------------------------
+Run time = 2.3505332449994967 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Error: Contract not supported!
+-------------------------------------------------------
+Run time = 3.6936032970006636 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Error: Contract not supported!
+-------------------------------------------------------
+Run time = 3.5609432729997934 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Error: Contract not supported!
+-------------------------------------------------------
+Run time = 3.813814724999247 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Error: Contract not supported!
+-------------------------------------------------------
+Run time = 3.9305519929985167 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Error: Contract not supported!
+-------------------------------------------------------
+Run time = 0.19013599999743747 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Slither was not able to scan the contract! File not supported
+-------------------------------------------------------
+Run time = 0.06050419999519363 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Slither was not able to scan the contract! File not supported
+-------------------------------------------------------
+Run time = 0.05690580000373302 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Slither was not able to scan the contract! File not supported
+-------------------------------------------------------
+Run time = 1.8791722969999682 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Slither was not able to scan the contract! File not supported
+-------------------------------------------------------
+Run time = 1.4515847000002395 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: The first instance reverted
+-------------------------------------------------------
+Run time = 0.5907806000031997 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: Contract with internal constructor cannot be created directly. Refer to the original contract with the loop.
+-------------------------------------------------------
+Run time = 8.759307020998676 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: Contract with internal constructor cannot be created directly. Refer to the original contract with the loop.
+-------------------------------------------------------
+Run time = 22.390874938002526 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: Contract with internal constructor cannot be created directly. Refer to the original contract with the loop.
+-------------------------------------------------------
+Run time = 14.248482097002125 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 16.366702093000015 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 15.678708906999987 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 16.25059322200002 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 20.211994946000004 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 17.427373248999857 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 38.26926094800001 seconds
+###################################################
+###################################################
+###################################################

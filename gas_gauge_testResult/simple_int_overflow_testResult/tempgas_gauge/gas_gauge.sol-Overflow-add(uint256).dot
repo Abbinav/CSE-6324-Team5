@@ -1,0 +1,21 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: EXPRESSION 1
+
+EXPRESSION:
+sellerBalance += value
+
+IRs:
+sellerBalance(uint256) = sellerBalance (c)+ value"];
+1->2;
+2[label="Node Type: EXPRESSION 2
+
+EXPRESSION:
+assert(bool)(sellerBalance >= value)
+
+IRs:
+TMP_0(bool) = sellerBalance >= value
+TMP_1(None) = SOLIDITY_CALL assert(bool)(TMP_0)"];
+}

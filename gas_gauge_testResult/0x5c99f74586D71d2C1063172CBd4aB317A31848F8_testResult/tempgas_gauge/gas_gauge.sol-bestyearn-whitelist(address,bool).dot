@@ -29,5 +29,5 @@ EXPRESSION:
 Whitelist(_user,_status)
 
 IRs:
-Emit Whitelist(_user,_status)"];
+Emit Whitelist(_user._status)"];
 }

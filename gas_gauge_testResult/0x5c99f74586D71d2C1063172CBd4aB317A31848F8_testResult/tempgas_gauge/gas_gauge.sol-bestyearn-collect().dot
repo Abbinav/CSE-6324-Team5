@@ -51,7 +51,7 @@ Transfer(address(this),msg.sender,_dividends)
 
 IRs:
 TMP_10 = CONVERT this to address
-Emit Transfer(TMP_10,msg.sender,_dividends)"];
+Emit Transfer(TMP_10.msg.sender._dividends)"];
 5->6;
 6[label="Node Type: EXPRESSION 6
 
@@ -59,7 +59,7 @@ EXPRESSION:
 Collect(msg.sender,_dividends)
 
 IRs:
-Emit Collect(msg.sender,_dividends)"];
+Emit Collect(msg.sender._dividends)"];
 6->7;
 7[label="Node Type: RETURN 7
 

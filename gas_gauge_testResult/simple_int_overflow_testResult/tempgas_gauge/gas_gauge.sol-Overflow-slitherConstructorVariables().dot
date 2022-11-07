@@ -1,0 +1,9 @@
+digraph{
+0[label="Node Type: OTHER_ENTRYPOINT 0
+
+EXPRESSION:
+sellerBalance = 0
+
+IRs:
+sellerBalance(uint256) := 0(uint256)"];
+}

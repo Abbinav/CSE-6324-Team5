@@ -244,7 +244,7 @@ class SetUp:
             output_file.write("\n")
         output_file.close()
 
-        # shutil.copy(contract_file, contract_folder + '/' + self.file_name, follow_symlinks=True)
+        shutil.copy(contract_file, contract_folder + '/' + self.file_name, follow_symlinks=True)
         return contract_folder + '/' + self.file_name
 
     def modify_loop(self, contract, c_info, f_info, l_info, state_vars, it_counter=2):

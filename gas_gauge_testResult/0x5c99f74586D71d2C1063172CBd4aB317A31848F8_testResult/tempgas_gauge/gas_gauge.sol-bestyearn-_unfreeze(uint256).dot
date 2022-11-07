@@ -87,7 +87,7 @@ Transfer(address(this),msg.sender,_amount - _burnedAmount)
 IRs:
 TMP_107 = CONVERT this to address
 TMP_108(uint256) = _amount (c)- _burnedAmount
-Emit Transfer(TMP_107,msg.sender,TMP_108)"];
+Emit Transfer(TMP_107.msg.sender.TMP_108)"];
 8->9;
 9[label="Node Type: EXPRESSION 9
 
@@ -95,5 +95,5 @@ EXPRESSION:
 Unfreeze(msg.sender,_amount)
 
 IRs:
-Emit Unfreeze(msg.sender,_amount)"];
+Emit Unfreeze(msg.sender._amount)"];
 }

@@ -69,7 +69,7 @@ Transfer(msg.sender,address(this),_burnedAmount)
 
 IRs:
 TMP_19 = CONVERT this to address
-Emit Transfer(msg.sender,TMP_19,_burnedAmount)"];
+Emit Transfer(msg.sender.TMP_19._burnedAmount)"];
 7->8;
 8[label="Node Type: END_IF 8
 "];
@@ -90,7 +90,7 @@ Transfer(msg.sender,address(0x0),_burnedAmount)
 
 IRs:
 TMP_21 = CONVERT 0 to address
-Emit Transfer(msg.sender,TMP_21,_burnedAmount)"];
+Emit Transfer(msg.sender.TMP_21._burnedAmount)"];
 10->11;
 11[label="Node Type: EXPRESSION 11
 

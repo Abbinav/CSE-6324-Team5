@@ -52,5 +52,5 @@ Transfer(msg.sender,address(this),_tokens)
 
 IRs:
 TMP_31 = CONVERT this to address
-Emit Transfer(msg.sender,TMP_31,_tokens)"];
+Emit Transfer(msg.sender.TMP_31._tokens)"];
 }
