@@ -1,0 +1,4 @@
+evm:
+  ignore_balance: true
+smt:
+  memory: 16384

@@ -1,0 +1,160 @@
+    0: PUSH1 0x80
+    2: PUSH1 0x40
+    4: MSTORE
+    5: CALLVALUE
+    6: DUP1
+    7: ISZERO
+    8: PUSH2 0x10
+    b: JUMPI
+    c: PUSH1 0x0
+    e: DUP1
+    f: REVERT
+   10: JUMPDEST
+   11: POP
+   12: PUSH1 0xd6
+   14: DUP1
+   15: PUSH2 0x1f
+   18: PUSH1 0x0
+   1a: CODECOPY
+   1b: PUSH1 0x0
+   1d: RETURN
+   1e: INVALID
+   1f: PUSH1 0x80
+   21: PUSH1 0x40
+   23: MSTORE
+   24: PUSH1 0x4
+   26: CALLDATASIZE
+   27: LT
+   28: PUSH1 0x1c
+   2a: JUMPI
+   2b: PUSH1 0x0
+   2d: CALLDATALOAD
+   2e: PUSH1 0xe0
+   30: SHR
+   31: DUP1
+   32: PUSH4 0xb3de648b
+   37: EQ
+   38: PUSH1 0x21
+   3a: JUMPI
+   3b: JUMPDEST
+   3c: PUSH1 0x0
+   3e: DUP1
+   3f: REVERT
+   40: JUMPDEST
+   41: PUSH1 0x37
+   43: PUSH1 0x4
+   45: DUP1
+   46: CALLDATASIZE
+   47: SUB
+   48: DUP2
+   49: ADD
+   4a: SWAP1
+   4b: PUSH1 0x33
+   4d: SWAP2
+   4e: SWAP1
+   4f: PUSH1 0x5c
+   51: JUMP
+   52: JUMPDEST
+   53: PUSH1 0x39
+   55: JUMP
+   56: JUMPDEST
+   57: STOP
+   58: JUMPDEST
+   59: PUSH1 0x41
+   5b: DUP2
+   5c: EQ
+   5d: ISZERO
+   5e: PUSH1 0x46
+   60: JUMPI
+   61: PUSH1 0x0
+   63: DUP1
+   64: REVERT
+   65: JUMPDEST
+   66: POP
+   67: JUMP
+   68: JUMPDEST
+   69: PUSH1 0x0
+   6b: DUP2
+   6c: CALLDATALOAD
+   6d: SWAP1
+   6e: POP
+   6f: PUSH1 0x56
+   71: DUP2
+   72: PUSH1 0x8c
+   74: JUMP
+   75: JUMPDEST
+   76: SWAP3
+   77: SWAP2
+   78: POP
+   79: POP
+   7a: JUMP
+   7b: JUMPDEST
+   7c: PUSH1 0x0
+   7e: PUSH1 0x20
+   80: DUP3
+   81: DUP5
+   82: SUB
+   83: SLT
+   84: ISZERO
+   85: PUSH1 0x6d
+   87: JUMPI
+   88: PUSH1 0x0
+   8a: DUP1
+   8b: REVERT
+   8c: JUMPDEST
+   8d: PUSH1 0x0
+   8f: PUSH1 0x79
+   91: DUP5
+   92: DUP3
+   93: DUP6
+   94: ADD
+   95: PUSH1 0x49
+   97: JUMP
+   98: JUMPDEST
+   99: SWAP2
+   9a: POP
+   9b: POP
+   9c: SWAP3
+   9d: SWAP2
+   9e: POP
+   9f: POP
+   a0: JUMP
+   a1: JUMPDEST
+   a2: PUSH1 0x0
+   a4: DUP2
+   a5: SWAP1
+   a6: POP
+   a7: SWAP2
+   a8: SWAP1
+   a9: POP
+   aa: JUMP
+   ab: JUMPDEST
+   ac: PUSH1 0x93
+   ae: DUP2
+   af: PUSH1 0x82
+   b1: JUMP
+   b2: JUMPDEST
+   b3: DUP2
+   b4: EQ
+   b5: PUSH1 0x9d
+   b7: JUMPI
+   b8: PUSH1 0x0
+   ba: DUP1
+   bb: REVERT
+   bc: JUMPDEST
+   bd: POP
+   be: JUMP
+   bf: INVALID
+   c0: LOG2
+   c1: PUSH5 0x6970667358
+   c7: INVALID
+   c8: SLT
+   c9: SHA3
+   ca: PUSH22 0xe09e55619e397572e84d17073d8fb7f921018740efff
+   e1: CALL
+   e2: ADD
+   e3: GAS
+   e4: INVALID
+   e5: ADD
+   e6: INVALID
+   e7: SWAP3

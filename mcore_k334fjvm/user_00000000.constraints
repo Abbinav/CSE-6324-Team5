@@ -1,5 +1,0 @@
-(declare-fun STORAGE_8c0250427142d7068b9d3d7ea468d6c5bb8c3f2d () (Array (_ BitVec 256) (_ BitVec 256)))
-(declare-fun STORAGE_b256228fe631e72d102fd158a44fa965854ea34 () (Array (_ BitVec 256) (_ BitVec 256)))
-(declare-fun DATA_b256228fe631e72d102fd158a44fa965854ea34 () (Array (_ BitVec 256) (_ BitVec 8)))
-(declare-fun BYTECODE_b256228fe631e72d102fd158a44fa965854ea34 () (Array (_ BitVec 256) (_ BitVec 8)))
-(declare-fun EMPTY_MEMORY_b256228fe631e72d102fd158a44fa965854ea34 () (Array (_ BitVec 256) (_ BitVec 8)))

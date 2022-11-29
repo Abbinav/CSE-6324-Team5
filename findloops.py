@@ -536,8 +536,8 @@ class FindLoops:
             print("Creation of the directory %s failed" % self.temp_output_path)
         else:
             print("Successfully created the directory %s " % self.temp_output_path)
-        # shutil.copy(self.contract_path + self.original_name, self.temp_output_path + '/' + self.file_name,
-        #             follow_symlinks=True)
+        shutil.copy(self.contract_path + self.original_name, self.temp_output_path + '/' + self.file_name,
+                    follow_symlinks=True)
         self.state_variables = self.make_state_variable_list()
         self.func_sum = self.make_function_summary()
 

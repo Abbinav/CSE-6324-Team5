@@ -1,0 +1,139 @@
+    0: PUSH1 0x80
+    2: PUSH1 0x40
+    4: MSTORE
+    5: PUSH1 0x4
+    7: CALLDATASIZE
+    8: LT
+    9: PUSH1 0x1c
+    b: JUMPI
+    c: PUSH1 0x0
+    e: CALLDATALOAD
+    f: PUSH1 0xe0
+   11: SHR
+   12: DUP1
+   13: PUSH4 0xb3de648b
+   18: EQ
+   19: PUSH1 0x21
+   1b: JUMPI
+   1c: JUMPDEST
+   1d: PUSH1 0x0
+   1f: DUP1
+   20: REVERT
+   21: JUMPDEST
+   22: PUSH1 0x37
+   24: PUSH1 0x4
+   26: DUP1
+   27: CALLDATASIZE
+   28: SUB
+   29: DUP2
+   2a: ADD
+   2b: SWAP1
+   2c: PUSH1 0x33
+   2e: SWAP2
+   2f: SWAP1
+   30: PUSH1 0x5c
+   32: JUMP
+   33: JUMPDEST
+   34: PUSH1 0x39
+   36: JUMP
+   37: JUMPDEST
+   38: STOP
+   39: JUMPDEST
+   3a: PUSH1 0x41
+   3c: DUP2
+   3d: EQ
+   3e: ISZERO
+   3f: PUSH1 0x46
+   41: JUMPI
+   42: PUSH1 0x0
+   44: DUP1
+   45: REVERT
+   46: JUMPDEST
+   47: POP
+   48: JUMP
+   49: JUMPDEST
+   4a: PUSH1 0x0
+   4c: DUP2
+   4d: CALLDATALOAD
+   4e: SWAP1
+   4f: POP
+   50: PUSH1 0x56
+   52: DUP2
+   53: PUSH1 0x8c
+   55: JUMP
+   56: JUMPDEST
+   57: SWAP3
+   58: SWAP2
+   59: POP
+   5a: POP
+   5b: JUMP
+   5c: JUMPDEST
+   5d: PUSH1 0x0
+   5f: PUSH1 0x20
+   61: DUP3
+   62: DUP5
+   63: SUB
+   64: SLT
+   65: ISZERO
+   66: PUSH1 0x6d
+   68: JUMPI
+   69: PUSH1 0x0
+   6b: DUP1
+   6c: REVERT
+   6d: JUMPDEST
+   6e: PUSH1 0x0
+   70: PUSH1 0x79
+   72: DUP5
+   73: DUP3
+   74: DUP6
+   75: ADD
+   76: PUSH1 0x49
+   78: JUMP
+   79: JUMPDEST
+   7a: SWAP2
+   7b: POP
+   7c: POP
+   7d: SWAP3
+   7e: SWAP2
+   7f: POP
+   80: POP
+   81: JUMP
+   82: JUMPDEST
+   83: PUSH1 0x0
+   85: DUP2
+   86: SWAP1
+   87: POP
+   88: SWAP2
+   89: SWAP1
+   8a: POP
+   8b: JUMP
+   8c: JUMPDEST
+   8d: PUSH1 0x93
+   8f: DUP2
+   90: PUSH1 0x82
+   92: JUMP
+   93: JUMPDEST
+   94: DUP2
+   95: EQ
+   96: PUSH1 0x9d
+   98: JUMPI
+   99: PUSH1 0x0
+   9b: DUP1
+   9c: REVERT
+   9d: JUMPDEST
+   9e: POP
+   9f: JUMP
+   a0: INVALID
+   a1: LOG2
+   a2: PUSH5 0x6970667358
+   a8: INVALID
+   a9: SLT
+   aa: SHA3
+   ab: PUSH22 0xe09e55619e397572e84d17073d8fb7f921018740efff
+   c2: CALL
+   c3: ADD
+   c4: GAS
+   c5: INVALID
+   c6: ADD
+   c7: INVALID
+   c8: SWAP3

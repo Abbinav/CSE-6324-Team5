@@ -4,6 +4,7 @@ from setup import SetUp
 from agent import Agent
 from fuzzer import Fuzzer
 from manticore.ethereum import ManticoreEVM, ABI, verifier
+from manticore.core.smtlib import Operators, solver
 from multiprocessing.pool import ThreadPool
 import timeit
 import shutil
@@ -933,25 +934,24 @@ class Main():
                             
                 print("Results are in {}".format(m.workspace))
                 m.finalize()
-                verifier.manticore_verifier("0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol", "bestyearn", "None", "3")
+                verifier.manticore_verifier("token.sol", "TestToken")
                 
             m = ManticoreEVM()
-
-            # open(self.self.contract_path + "/simple_int_overflow.sol")
+            
             with open(self.contract_path + "simple_int_overflow.sol" ) as f:
                 source_code_1 = f.read()
 
             user_account_1 = m.create_account(balance=self.gas_limit)
             contract_account_1 = m.solidity_create_contract(source_code_1,
                                                         owner=user_account_1, gas=36225)
-            # m.generate_testcase(state=0)
-            # m.get_account(user_account_1)
+            m.generate_testcase(state=0)
+            m.get_account(user_account_1)
 
             print("Results are in {}".format(m.workspace))
             m.finalize()
 
             m = ManticoreEVM() # initiate the blockchain
-            with open(self.contract_path) as f:
+            with open("unprotected.sol") as f:
                 source_code = f.read()
 
             # Generate the accounts. Creator has 10 ethers; attacker 0
@@ -973,9 +973,58 @@ class Main():
                     print("Attacker can steal the ether! see {}".format(m.workspace))
                     m.generate_testcase(state, 'WalletHack')
                     print(f'Bug found, results are in {m.workspace}')
-
+    
             
+            m = ManticoreEVM()
+            with open(self.contract_file) as f:
+                source_code = f.read()            
+            user_account = m.create_account(balance=1000*10**18)
+            contract_account = m.solidity_create_contract(source_code, owner=user_account)
+            contract_account.balances(user_account)
 
+            symbolic_val = m.make_symbolic_value()
+            symbolic_to = m.make_symbolic_value()
+            contract_account.transfer(symbolic_to, symbolic_val)
+
+            contract_account.balances(user_account)         
+            bug_found = False
+            for state in m.ready_states:
+                balance_before = state.platform.transactions[1].return_data
+                balance_before = ABI.deserialize("uint", balance_before)
+
+                balance_after = state.platform.transactions[-1].return_data
+                balance_after = ABI.deserialize("uint", balance_after)
+                condition = Operators.UGT(balance_after, balance_before)
+                print("Balance after", balance_after)
+                print("Balance before", balance_before)
+                if m.generate_testcase(state, name="BugFound", only_if=condition):
+                    print("Bug found! see {}".format(m.workspace))
+                    bug_found = True
+            if not bug_found:
+                print('No bug were found')
+
+
+        m = ManticoreEVM()       
+        user_account = m.create_account(balance=1000 * 10 ** 18)
+        with open(self.contract_file) as f:
+            source_code = f.read()
+            contract_account = m.solidity_create_contract(source_code, owner=user_account, balance=0)
+        
+        value_0 = m.make_symbolic_value()
+        contract_account.add(value_0)    
+        value_1 = m.make_symbolic_value()
+        contract_account.add(value_1)
+        contract_account.sellerBalance()
+
+        for state in m.ready_states:
+            last_return = state.platform.transactions[-1].return_data
+            last_return = ABI.deserialize("uint", last_return)
+
+            state.constrain(Operators.UGT(value_0, last_return))
+
+            if state.is_feasible():
+                print("Overflow found! see {}".format(m.workspace))
+        m.generate_testcase(state, 'OverflowFound')
 
 
 
@@ -1028,10 +1077,7 @@ class Main():
         if self.contract_file != '':
             self.run(self.contract_file, fuzzer_flag, threshold_flag, output_file, ganache_flag)
         else:
-            for file in glob.glob(os.path.join(self.contract_path, '*.sol')):
-                print("Print here",self.contract_path)
-                
+            for file in glob.glob(os.path.join(self.contract_path, '*.sol')):                
                 file_name = file[file.index(self.contract_path) + len(self.contract_path):]
-                print("Print here 2",file_name)
                 ganache_flag = self.run(file_name, fuzzer_flag, threshold_flag, output_file, ganache_flag)
 

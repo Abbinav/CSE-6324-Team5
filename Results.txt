@@ -332,3 +332,105 @@ Run time = 38.26926094800001 seconds
 ###################################################
 ###################################################
 ###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 43.19218105899927 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 32.784220067000206 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 38.213283274992136 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 37.165751524007646 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 35.71808401498129 seconds
+###################################################
+###################################################
+###################################################
+Report for 0x5c99f74586D71d2C1063172CBd4aB317A31848F8.sol:
+Found 1 loop in 1 function with the following information:
+Function Name: bestyearn.bulkTransfer(address[],uint256[]), Visibility: , Number of Loops: 1
+-------------------------------------------------------
+Results for bestyearn.bulkTransfer(address[],uint256[]): 
+inputs affecting the function loop bound(s) are: input 1 (address[] calldata _receivers); 
+
+Results of the fuzzer:
+Does not satisfy the conditions of the fuzzer
+-------------------------------------------------------
+Results of the Threshold Finder:
+Error: There is an error that cannot be handled
+-------------------------------------------------------
+Run time = 108.53048281199881 seconds
+###################################################
+###################################################
+###################################################
